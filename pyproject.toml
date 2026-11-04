@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "energypulse"
+version = "0.1.0"
+description = "UCI energiafogyasztás tisztító, előrejelző és anomália detektáló rendszer"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "streamlit",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "sqlalchemy",
+    "pydantic",
+    "requests",
+    "pyyaml"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
