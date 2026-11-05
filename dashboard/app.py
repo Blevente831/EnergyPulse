@@ -1,11 +1,14 @@
-"""EnergyPulse dashboard."""
+"""EnergyPulse dashboard.
+
+Run from the project root:  python -m streamlit run dashboard/app.py
+"""
 
 import json
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-import energypulse.analytics as analytics
+
 from energypulse import analytics, db
 from energypulse.config import (
     ANOMALY_MIN_DEVIATION_KWH,
@@ -270,7 +273,7 @@ with tab_anomalies:
                 f"Each hour is compared with the same hour on the previous **{ANOMALY_WINDOW_WEEKS} weeks** "
                 "of the same day type (weekday or weekend), so a normal evening peak is never flagged. "
                 "The comparison uses relative change on a log scale with the median and median absolute "
-                f"deviation, which resist being distorted by past anomalies. An hour is flagged when its "
+                "deviation, which resist being distorted by past anomalies. An hour is flagged when its "
                 f"robust z-score exceeds **{ANOMALY_THRESHOLD}** and it also differs by at least "
                 f"**{ANOMALY_MIN_DEVIATION_KWH} kWh**. Consecutive flagged hours are merged into one event."
             )
