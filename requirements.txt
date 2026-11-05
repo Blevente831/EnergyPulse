@@ -1,13 +1,12 @@
-pandas==3.0.2
-numpy==2.4.4
-scikit-learn==1.8.0
-joblib==1.5.3
-sqlalchemy
-streamlit
-plotly
-fastapi
-uvicorn[standard]
-pydantic
-pytest
-httpx
-ruff
+# Runtime dependencies. Lower bounds are the versions the project was developed and tested with;
+# run `pip freeze` in a working environment if you want to pin exact versions.
+pandas>=3.0
+numpy>=2.4
+scikit-learn>=1.8
+joblib>=1.5
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.9
+streamlit>=1.40
+plotly>=5.20
+ 
